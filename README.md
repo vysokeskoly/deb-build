@@ -38,27 +38,12 @@ require __DIR__ . '/vendor/vysokeskoly/deb-build/src/autoload.php';
 
 # Build a deb package
 
-## Build by Robo on Jenkins
-
-```sh
-wget https://github.com/vysokeskoly/robo-mirror/raw/master/robo.phar
-php robo.phar build:deb
-```
-
-
-## Build locally (_vagrant_) - test purposes only
+## Build a deb package
 
 ```sh
 sudo apt-get install ruby-dev gcc make
 sudo gem install fpm
-```
 
-then build Robo as on jenkins (`BUILD_NUMBER` could be any number):
-
-```sh
-sudo /bin/bash
-wget https://github.com/vysokeskoly/robo-mirror/raw/master/robo.phar
-    
 export BUILD_NUMBER=666
-php robo.phar build:deb
+bin/robo build:deb
 ```
