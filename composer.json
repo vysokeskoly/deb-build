@@ -1,6 +1,8 @@
 {
     "name": "vysokeskoly/deb-build",
     "description": "Utilities for building deb packages of PHP apps",
+    "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "VysokeSkoly\\Build\\": "src/Build/"
