@@ -9,7 +9,7 @@ on:
 jobs:
     checks:
         runs-on: ubuntu-latest
-        name: PHP 8.1 - checks
+        name: PHP - checks
         steps:
             # Setup
             -   uses: actions/checkout@v2
