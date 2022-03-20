@@ -10,10 +10,6 @@ use Robo\Task\BaseTask;
  */
 class Postinst extends BaseTask
 {
-    private string $packageName;
-    private string $targetDir;
-    private string $packageInstallDir;
-
     private string $method = 'install:deb-postinst';
     /** @var string[] */
     private array $args = [];
@@ -23,9 +19,9 @@ class Postinst extends BaseTask
      * @param string $packageInstallDir From which directory will the postinst task be run
      */
     public function __construct(
-        string $packageName,
-        string $targetDir,
-        string $packageInstallDir
+        private string $packageName,
+        private string $targetDir,
+        private string $packageInstallDir
     ) {
         if ($targetDir[0] !== '/') {
             throw new \RuntimeException(
@@ -33,10 +29,6 @@ class Postinst extends BaseTask
                 . ' You may use path to the temporary build directory.'
             );
         }
-
-        $this->packageName = $packageName;
-        $this->targetDir = $targetDir;
-        $this->packageInstallDir = $packageInstallDir;
     }
 
     public function method(string $method): self

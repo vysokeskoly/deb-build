@@ -1,6 +1,9 @@
 Debian package build
 ====================
 
+[![Checks](https://github.com/vysokeskoly/deb-build/actions/workflows/checks.yaml/badge.svg)](https://github.com/vysokeskoly/deb-build/actions/workflows/checks.yaml)
+[![Build](https://github.com/vysokeskoly/deb-build/actions/workflows/php-checks.yaml/badge.svg)](https://github.com/vysokeskoly/deb-build/actions/workflows/php-checks.yaml)
+
 Build deb package of PHP application using [Robo](http://robo.li/) task runner.
 
 

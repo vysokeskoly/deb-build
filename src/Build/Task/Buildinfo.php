@@ -10,13 +10,11 @@ use Robo\Task\BaseTask;
  */
 class Buildinfo extends BaseTask
 {
-    protected string $filename;
     protected string $appName = '';
     protected string $version = '';
 
-    public function __construct(string $filename)
+    public function __construct(protected string $filename)
     {
-        $this->filename = $filename;
     }
 
     public function appName(string $appName): self
