@@ -1,0 +1,50 @@
+{
+    "name": "vysokeskoly/deb-build",
+    "description": "Utilities for building deb packages of PHP apps",
+    "autoload": {
+        "psr-4": {
+            "VysokeSkoly\\Build\\": "src/Build/"
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "ext-dom": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "consolidation/robo": "^3"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.4",
+        "phpstan/extension-installer": "^1.1"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@installTools"
+        ],
+        "post-update-cmd": [
+            "@updateTools"
+        ],
+        "installTools": [
+            "cd tools/coding-standards && composer install && composer link"
+        ],
+        "updateTools": [
+            "cd tools/coding-standards && composer update && composer link"
+        ],
+        "all": [
+            "@analyze"
+        ],
+        "analyze": [
+            "@cs",
+            "@phpstan"
+        ],
+        "cs": "vendor/bin/ecs check --ansi -- src/ ecs.php",
+        "phpstan": "vendor/bin/phpstan analyze ./src -c phpstan.neon --ansi --level 8",
+        "fix": "vendor/bin/ecs check src/ ecs.php --ansi --fix"
+    }
+}
