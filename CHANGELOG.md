@@ -3,6 +3,8 @@
 <!-- There should always be "Unreleased" section at the beginning. -->
 
 ## Unreleased
+- [**BC**] Use php 8.1 features
+- Support `GIT_TAG` env var
 
 ## 6.0.0 - 2022-03-20
 - Require php 8.1 or higher

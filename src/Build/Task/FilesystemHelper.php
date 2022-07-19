@@ -54,7 +54,7 @@ class FilesystemHelper extends CommandStack
                 '-type d',
                 '-prune',
                 '-exec rm -rf {} \;',
-            ]
+            ],
         );
     }
 }
