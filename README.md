@@ -1,8 +1,11 @@
 Debian package build
 ====================
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/vysokeskoly/deb-build.svg)](https://packagist.org/packages/vysokeskoly/deb-build)
+[![License](https://img.shields.io/packagist/l/vysokeskoly/deb-build.svg)](https://packagist.org/packages/vysokeskoly/deb-build)
 [![Checks](https://github.com/vysokeskoly/deb-build/actions/workflows/checks.yaml/badge.svg)](https://github.com/vysokeskoly/deb-build/actions/workflows/checks.yaml)
 [![Build](https://github.com/vysokeskoly/deb-build/actions/workflows/php-checks.yaml/badge.svg)](https://github.com/vysokeskoly/deb-build/actions/workflows/php-checks.yaml)
+[![Coverage Status](https://coveralls.io/repos/github/vysokeskoly/deb-build/badge.svg)](https://coveralls.io/github/vysokeskoly/deb-build)
 
 Build deb package of PHP application using [Robo](http://robo.li/) task runner.
 
