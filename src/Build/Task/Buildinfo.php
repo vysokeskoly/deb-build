@@ -44,6 +44,7 @@ class Buildinfo extends BaseTask
         $root->appendChild($doc->createElement('buildNumber', $this->getEnv('BUILD_NUMBER')));
         $root->appendChild($doc->createElement('buildBranch', $this->getEnv('GIT_BRANCH')));
         $root->appendChild($doc->createElement('buildUrl', $this->getEnv('BUILD_URL')));
+        $root->appendChild($doc->createElement('buildTag', $this->getEnv('GIT_TAG')));
         $root->appendChild($doc->createElement('project', $this->getEnv('JOB_NAME')));
         $root->appendChild($doc->createElement('hostName', '__HOSTNAME__'));
 

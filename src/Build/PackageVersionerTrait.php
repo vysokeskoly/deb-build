@@ -12,7 +12,7 @@ trait PackageVersionerTrait
         return sprintf(
             '%s%s',
             ($isDevBuild ? '0~' : ''),
-            date('Y.m.d.H.i.s')
+            date('Y.m.d.H.i.s'),
         );
     }
 
@@ -28,7 +28,7 @@ trait PackageVersionerTrait
         return sprintf(
             '%s.g%s',
             $jenkinsBuildNumber,
-            $gitShortCommit
+            $gitShortCommit,
         );
     }
 

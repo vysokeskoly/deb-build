@@ -16,7 +16,7 @@ trait BranchPackageVersionerTrait
         return sprintf(
             '%s%s',
             ($isDevBuild ? '0~' : ''),
-            date('Y.m.d')
+            date('Y.m.d'),
         );
     }
 
@@ -27,9 +27,14 @@ trait BranchPackageVersionerTrait
             throw new \RuntimeException('BUILD_NUMBER environment variable is empty, are you building on Jenkins?');
         }
 
-        $jenkinsGitBranchOrTag = getenv('GIT_BRANCH');
+        $tag = getenv('GIT_TAG');
+        $branch = getenv('GIT_BRANCH');
+        $jenkinsGitBranchOrTag = empty($tag)
+            ? $branch
+            : $tag;
+
         if (!$jenkinsGitBranchOrTag) {
-            throw new \RuntimeException('GIT_BRANCH environment variable is empty, are you building on Jenkins?');
+            throw new \RuntimeException('GIT_TAG and GIT_BRANCH environment variable is empty, are you building on Jenkins?');
         }
 
         // replace all "/" in git branch name with -
@@ -38,7 +43,7 @@ trait BranchPackageVersionerTrait
         return sprintf(
             '%s.%s',
             $jenkinsBuildNumber,
-            $jenkinsGitBranchOrTag
+            $jenkinsGitBranchOrTag,
         );
     }
 }

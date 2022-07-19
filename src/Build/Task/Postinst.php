@@ -21,12 +21,12 @@ class Postinst extends BaseTask
     public function __construct(
         private string $packageName,
         private string $targetDir,
-        private string $packageInstallDir
+        private string $packageInstallDir,
     ) {
         if ($targetDir[0] !== '/') {
             throw new \RuntimeException(
                 'Target directory where to place the postinst file must be absolute.'
-                . ' You may use path to the temporary build directory.'
+                . ' You may use path to the temporary build directory.',
             );
         }
     }
@@ -70,7 +70,7 @@ class Postinst extends BaseTask
             return Result::error(
                 $this,
                 'Error writing postinst to {fileFullPath}.',
-                ['fileFullPath' => $postinstTargetPath]
+                ['fileFullPath' => $postinstTargetPath],
             );
         }
 
