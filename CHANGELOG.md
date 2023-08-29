@@ -3,6 +3,8 @@
 <!-- There should always be "Unreleased" section at the beginning. -->
 
 ## Unreleased
+
+## 7.1.0 - 2023-08-29
 - Update Robo to 4
 
 ## 7.0.0 - 2022-07-19
